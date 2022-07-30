@@ -10,8 +10,8 @@ namespace CustomerCrm.Core.Contracts.Repository
     {
         Task<int> InsertAsync(T entity);
         Task<int> UpdateAsync(T entity);
-        Task<int> DeleteAsync(T entity);
-        Task<T> GetByIdAsync(T entity);
-        Task<IEnumerable<T>> DeleteAllAsync();
+        Task<int> DeleteAsync(int id);
+        Task<T> GetByIdAsync(int id);
+        Task<IEnumerable<T>> GetAllAsync();
     }
 }
