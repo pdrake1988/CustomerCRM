@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
@@ -10,32 +11,35 @@ namespace CustomerCrm.Core.Entities
     public class Product
     {
         public int Id { get; set; }
-        
+
+        [Required]
         [Column(TypeName = "Varchar(30)")]
         public string Name { get; set; }
-        
-        [Column(TypeName = "int")]
-        public int SupplierId { get; set; }
-        
-        [Column(TypeName = "int")]
+
+        public int ShipperId { get; set; }
+        public Shipper Shipper { get; set; }
+
         public int CategoryId { get; set; }
-        
+        public Category Category { get; set; }
+
+        [Required]
         [Column(TypeName = "int")]
         public int QuantityPerUnit { get; set; }
 
-        [Column(TypeName = "int")]
+        [Required]
+        [Column(TypeName = "decimal(18, 2")]
         public decimal UnitPrice { get; set; }
 
-        [Column(TypeName = "int")]
+        [Required]
         public int UnitsInStock { get; set; }
 
-        [Column(TypeName = "int")]
+        [Required]
         public int UnitsOnOrder { get; set; }
 
-        [Column(TypeName = "int")]
+        [Required]
         public bool Discontinued { get; set; }
 
-        [Column(TypeName = "int")]
         public int VendorId { get; set; }
+        public Vendor Vendor { get; set; }
     }
 }
