@@ -16,18 +16,17 @@ namespace CustomerCrm.Core.Entities
         [Column(TypeName = "Varchar(30)")]
         public string Name { get; set; }
 
-        public int ShipperId { get; set; }
-        public Shipper Shipper { get; set; }
+        public int SupplierId { get; set; }
+        public Vendor Vendor { get; set; }
 
         public int CategoryId { get; set; }
         public Category Category { get; set; }
 
         [Required]
-        [Column(TypeName = "int")]
         public int QuantityPerUnit { get; set; }
 
         [Required]
-        [Column(TypeName = "decimal(18, 2")]
+        [Column(TypeName = "decimal(18, 2)")]
         public decimal UnitPrice { get; set; }
 
         [Required]
@@ -38,8 +37,5 @@ namespace CustomerCrm.Core.Entities
 
         [Required]
         public bool Discontinued { get; set; }
-
-        public int VendorId { get; set; }
-        public Vendor Vendor { get; set; }
     }
 }

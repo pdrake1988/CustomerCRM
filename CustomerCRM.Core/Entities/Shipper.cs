@@ -19,5 +19,8 @@ namespace CustomerCrm.Core.Entities
         [Required]
         [Column(TypeName = "Varchar(15)")]
         public string Phone { get; set; }
+
+        public int ProductId { get; set; }
+        public Product Product { get; set; }
     }
 }

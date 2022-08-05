@@ -19,5 +19,7 @@ namespace CustomerCrm.Core.Entities
         [Required]
         [Column(TypeName = "Varchar(80)")]
         public string Description { get; set; }
+
+        public ICollection<Category> Categories { get; set; }
     }
 }

@@ -33,7 +33,7 @@ namespace Antra.CustomerCRM.WebAppMVC.Controllers
             return View();
         }
         [HttpPost]
-        public async Task<IActionResult> Create(CustomerModal model)
+        public async Task<IActionResult> Create(CustomerModel model)
         {
             if (ModelState.IsValid)
             {

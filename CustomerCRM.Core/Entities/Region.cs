@@ -15,5 +15,10 @@ namespace CustomerCrm.Core.Entities
         [Required]
         [Column(TypeName = "Varchar(20)")]
         public string Name { get; set; }
+
+        public int EmployeeId { get; set; }
+        public ICollection<Employee> Employees { get; set; }
+
+        public ICollection<Customer> Customers { get; set; }
     }
 }

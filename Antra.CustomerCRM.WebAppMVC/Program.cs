@@ -1,3 +1,7 @@
+using CustomerCrm.Core.Contracts.Repository;
+using CustomerCrm.Core.Contracts.Services;
+using CustomerCrm.Infrastructure.Repository;
+using CustomerCrm.Infrastructure.Service;
 using CustomerCRM.Infrastructure.Data;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -6,6 +10,11 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllersWithViews();
 
 builder.Services.AddSqlServer<CustomerCrmDbContext>(builder.Configuration.GetConnectionString("CustomerCRM"));
+builder.Services.AddScoped<IRegionRepositoryAsync, RegionRepositoryAsync>();
+builder.Services.AddScoped<ICustomerRepositoryAsync, CustomerRepositoryAsync>();
+builder.Services.AddScoped<ICustomerServiceAsync, CustomerServiceAsync>();
+builder.Services.AddScoped<IRegionServiceAsync, RegionServiceAsync>();
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

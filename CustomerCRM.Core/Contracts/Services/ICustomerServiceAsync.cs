@@ -9,7 +9,7 @@ namespace CustomerCrm.Core.Contracts.Services
 {
     public interface ICustomerServiceAsync
     {
-        Task<int> InsertCustomerAsync(CustomerModal model);
+        Task<int> InsertCustomerAsync(CustomerModel model);
         Task<CustomerReponseModel> GetCustomerByIdAsync(int id);
         Task<IEnumerable<CustomerReponseModel>> GetAllAsync();
     }

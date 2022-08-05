@@ -23,8 +23,4 @@
     <ProjectReference Include="..\CustomerCRM.Core\CustomerCrm.Core.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Service\" />
-  </ItemGroup>
-
 </Project>

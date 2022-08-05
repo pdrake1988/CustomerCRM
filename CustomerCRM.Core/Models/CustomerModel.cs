@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace CustomerCrm.Core.Models
 {
-    public class CustomerModal
+    public class CustomerModel
     {
         public int Id { get; set; }
         [Required(ErrorMessage = "Name is required")]
@@ -29,7 +29,6 @@ namespace CustomerCrm.Core.Models
 
         [Required]
         public string Phone { get; set; }
-
         public string Photo { get; set; }
     }
 }

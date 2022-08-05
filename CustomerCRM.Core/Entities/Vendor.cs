@@ -35,5 +35,7 @@ namespace CustomerCrm.Core.Entities
         [Required]
         [Column(TypeName = "bit")]
         public bool IsActive { get; set; }
+
+        public ICollection<Product> Products { get; set; }
     }
 }

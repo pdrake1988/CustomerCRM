@@ -27,8 +27,6 @@ namespace CustomerCrm.Core.Entities
         [Required]
         [Column(TypeName = "Varchar(30)")]
         public string City { get; set; }
-        
-        public ICollection<Region> RegionId { get; set; }
 
         [Required]
         [Column(TypeName = "int")]
@@ -41,5 +39,11 @@ namespace CustomerCrm.Core.Entities
         [Required]
         [Column(TypeName = "Varchar")]
         public string Phone { get; set; }
+
+        [Column(TypeName = "Varchar(200)")]
+        public string Photo { get; set; }
+
+        public int RegionId { get; set; }
+        public Region Region { get; set; }
     }
 }

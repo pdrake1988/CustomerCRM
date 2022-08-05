@@ -10,18 +10,18 @@ using System.Threading.Tasks;
 
 namespace CustomerCrm.Infrastructure.Service
 {
-    internal class RegionServiceAsync : IRegionServiceAsync
+    public class RegionServiceAsync : IRegionServiceAsync
     {
         IRegionRepositoryAsync regionRepository;
         public RegionServiceAsync(IRegionRepositoryAsync _regionRepository)
         {
             regionRepository = _regionRepository;
         }
-        public async Task<int> InsertRegion(RegionModel regionModel)
+        public Task<int> InsertRegion(RegionModel regionModel)
         {
             Region regionEntity = new Region();
             regionEntity.Name = regionModel.Name;
-            return await regionRepository.InsertAsync(regionEntity);
+            return regionRepository.InsertAsync(regionEntity);
 
         }
 
@@ -43,9 +43,32 @@ namespace CustomerCrm.Infrastructure.Service
             return regions;
         }
 
-        public async Task<int> DeleteRegionAsync(int id)
+        public Task<int> DeleteRegionAsync(int id)
         {
-            return await regionRepository.DeleteAsync(id);
+            return regionRepository.DeleteAsync(id);
+        }
+
+        public Task<int> UpdateRegionAsync(RegionModel model)
+        {
+            Region regionEntity = new Region();
+            regionEntity.Name = model.Name;
+            regionEntity.Id = model.Id;
+            return regionRepository.UpdateAsync(regionEntity);
+        }
+
+        public async Task<RegionModel> GetRegionByIdAsync(int id)
+        {
+            Region entity = await regionRepository.GetByIdAsync(id);
+            if (entity != null)
+            {
+                RegionModel regionModel = new RegionModel()
+                {
+                    Id = entity.Id,
+                    Name = entity.Name
+                };
+                return regionModel;
+            }
+            return null;
         }
     }
 }
