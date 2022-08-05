@@ -25,7 +25,7 @@ namespace CustomerCrm.Core.Entities
         public string Title { get; set; }
 
         [Column(TypeName = "Varchar(5)")]
-        public string TitleOfCourtesy { get; set; }
+        public string? TitleOfCourtesy { get; set; }
 
         [Required]
         [Column(TypeName = "datetime2(7)")]

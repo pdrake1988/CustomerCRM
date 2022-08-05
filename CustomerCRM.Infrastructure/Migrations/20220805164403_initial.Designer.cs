@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace CustomerCrm.Infrastructure.Migrations
 {
     [DbContext(typeof(CustomerCrmDbContext))]
-    [Migration("20220805011629_initial")]
+    [Migration("20220805164403_initial")]
     partial class initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -155,7 +155,6 @@ namespace CustomerCrm.Infrastructure.Migrations
                         .HasColumnType("Varchar(50)");
 
                     b.Property<string>("TitleOfCourtesy")
-                        .IsRequired()
                         .HasColumnType("Varchar(5)");
 
                     b.HasKey("Id");
@@ -217,9 +216,6 @@ namespace CustomerCrm.Infrastructure.Migrations
                         .HasColumnType("int");
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
-
-                    b.Property<int>("EmployeeId")
-                        .HasColumnType("int");
 
                     b.Property<string>("Name")
                         .IsRequired()

@@ -79,6 +79,7 @@ namespace CustomerCrm.Infrastructure.Service
                 BirthDate = model.BirthDate,
                 Address = model.Address,
                 City = model.City,
+                RegionId = model.RegionId,
                 Country = model.Country,
                 Phone = model.Phone,
                 PhotoPath = model.PhotoPath,

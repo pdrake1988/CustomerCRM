@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CustomerCrm.Core.Entities;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -30,8 +31,8 @@ namespace CustomerCrm.Core.Models
         [Required(ErrorMessage = "City is Required")]
         public string City { get; set; }
 
-        [Required(ErrorMessage = "Region is Required")]
-        public int Region { get; set; }
+        public int RegionId { get; set; }
+        public Region Region { get; set; }
 
         [Required(ErrorMessage = "Postal Code is Required")]
         public int PostalCode { get; set; }

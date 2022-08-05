@@ -35,8 +35,7 @@ namespace CustomerCrm.Infrastructure.Migrations
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    Name = table.Column<string>(type: "Varchar(20)", nullable: false),
-                    EmployeeId = table.Column<int>(type: "int", nullable: false)
+                    Name = table.Column<string>(type: "Varchar(20)", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -97,7 +96,7 @@ namespace CustomerCrm.Infrastructure.Migrations
                     FirstName = table.Column<string>(type: "Varchar(20)", nullable: false),
                     LastName = table.Column<string>(type: "Varchar(20)", nullable: false),
                     Title = table.Column<string>(type: "Varchar(50)", nullable: false),
-                    TitleOfCourtesy = table.Column<string>(type: "Varchar(5)", nullable: false),
+                    TitleOfCourtesy = table.Column<string>(type: "Varchar(5)", nullable: true),
                     BirthDate = table.Column<DateTime>(type: "datetime2(7)", nullable: false),
                     HireDate = table.Column<DateTime>(type: "datetime2(7)", nullable: false),
                     Address = table.Column<string>(type: "Varchar(80)", nullable: false),
