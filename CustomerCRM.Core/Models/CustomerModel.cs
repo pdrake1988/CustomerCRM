@@ -29,6 +29,7 @@ namespace CustomerCrm.Core.Models
 
         [Required]
         public string Phone { get; set; }
+        
         public string Photo { get; set; }
     }
 }

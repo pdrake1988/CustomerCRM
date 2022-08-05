@@ -1,7 +1,8 @@
-﻿@model List<Employee>
+﻿@using CustomerCrm.Core.Models
+@model List<EmployeeModel>
 
 <h1>Employees List</h1>
-
+<a role="button" class="btn btn-success" asp-controller="Employee" asp-action="Create">Add an Employee</a>
     <div class="row">
         @{foreach (var m in Model)
         {

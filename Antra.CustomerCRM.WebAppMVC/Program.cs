@@ -12,8 +12,10 @@ builder.Services.AddControllersWithViews();
 builder.Services.AddSqlServer<CustomerCrmDbContext>(builder.Configuration.GetConnectionString("CustomerCRM"));
 builder.Services.AddScoped<IRegionRepositoryAsync, RegionRepositoryAsync>();
 builder.Services.AddScoped<ICustomerRepositoryAsync, CustomerRepositoryAsync>();
+builder.Services.AddScoped<IEmployeeRepositoryAsync, EmployeeRepositoryAsync>();
 builder.Services.AddScoped<ICustomerServiceAsync, CustomerServiceAsync>();
 builder.Services.AddScoped<IRegionServiceAsync, RegionServiceAsync>();
+builder.Services.AddScoped<IEmployeeServiceAsync, EmployeeServiceAsync>();
 
 var app = builder.Build();
 

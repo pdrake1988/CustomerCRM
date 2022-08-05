@@ -24,7 +24,6 @@ namespace CustomerCrm.Core.Entities
         [Column(TypeName = "Varchar(50)")]
         public string Title { get; set; }
 
-        [Required]
         [Column(TypeName = "Varchar(5)")]
         public string TitleOfCourtesy { get; set; }
 
@@ -32,7 +31,6 @@ namespace CustomerCrm.Core.Entities
         [Column(TypeName = "datetime2(7)")]
         public DateTime BirthDate { get; set; }
 
-        [Required]
         [Column(TypeName = "datetime2(7)")]
         public DateTime HireDate { get; set; }
 
@@ -48,7 +46,6 @@ namespace CustomerCrm.Core.Entities
         public Region Region { get; set; }
 
         [Required]
-        [Column(TypeName = "int")]
         public int PostalCode { get; set; }
 
         [Required]
@@ -59,7 +56,6 @@ namespace CustomerCrm.Core.Entities
         [Column(TypeName = "Varchar(15)")]
         public string Phone { get; set; }
 
-        [Column(TypeName = "int")]
         public int ReportsTo { get; set; }
 
         [Required]

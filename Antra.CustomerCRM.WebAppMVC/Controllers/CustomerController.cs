@@ -14,6 +14,7 @@ namespace Antra.CustomerCRM.WebAppMVC.Controllers
             this.customerServiceAsync = customerServiceAsync;
             this.regionServiceAsync = regionServiceAsync;
         }
+        [HttpGet]
         public async Task<IActionResult> Index(string cityname = "")
         {
             var result = await customerServiceAsync.GetAllAsync();
