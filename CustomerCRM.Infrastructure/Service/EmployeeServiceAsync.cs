@@ -70,9 +70,8 @@ namespace CustomerCrm.Infrastructure.Service
 
         public Task<int> InsertEmployeeAsync(EmployeeModel model)
         {
-            Employee emp = new Employee()
+             Employee emp = new Employee()
             {
-                Id = model.Id,
                 FirstName = model.FirstName,
                 LastName = model.LastName,
                 Title = model.Title,

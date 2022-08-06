@@ -35,9 +35,11 @@
             <span asp-validation-for="City"></span>
         </div>
         <div class="col-3 mb-3">
-            <label for="text-region">Region</label>
-            <input type="text" id="text-region" name="Region" class="form-control" />
-            <span asp-validation-for="Region"></span>
+            <label for="text-region">Select Region</label>
+            <select asp-items="@ViewBag.Regions" id="text-region" class="form-control" name="RegionId">
+                <option>Select Region</option>
+            </select>
+            <span asp-validation-for="RegionId"></span>
         </div>
         <div class="col-3 mb-3">
             <label for="text-postal">Postal Code</label>

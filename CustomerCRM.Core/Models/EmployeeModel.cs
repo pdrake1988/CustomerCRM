@@ -32,7 +32,6 @@ namespace CustomerCrm.Core.Models
         public string City { get; set; }
 
         public int RegionId { get; set; }
-        public Region Region { get; set; }
 
         [Required(ErrorMessage = "Postal Code is Required")]
         public int PostalCode { get; set; }
